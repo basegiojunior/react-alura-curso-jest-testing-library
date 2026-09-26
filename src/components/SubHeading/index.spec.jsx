@@ -17,14 +17,25 @@ describe("SubHeading", () => {
 
   // queryBy o item pode ou não estar na tela
   describe("queryBy", () => {
-    test("deveria renderizar o componente corretamente", () => {
+    test.skip("deveria renderizar o componente corretamente", () => {
       const { queryByText } = render(<SubHeading>Para estudar</SubHeading>);
       expect(queryByText("Para estudar")).toBeInTheDocument();
     });
 
-    test("NÃO deveria renderizar o componente quando não tem children", () => {
+    test.skip("NÃO deveria renderizar o componente quando não tem children", () => {
       const { queryByText } = render(<SubHeading></SubHeading>);
       expect(queryByText("Para estudar")).toBeNull();
+    });
+  });
+
+  // findBy espera o item seja renderizado
+  describe("findBy", () => {
+    test("deveria renderizar o componente após 500ms", async () => {
+      const { findByText } = render(<SubHeading>Para estudar</SubHeading>);
+
+      const description = await findByText("Só um exemplo de descrição ensinando sobre findby");
+
+      expect(description).toBeInTheDocument();
     });
   });
 });

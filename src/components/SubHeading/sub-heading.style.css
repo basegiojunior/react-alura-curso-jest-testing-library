@@ -8,3 +8,10 @@
   margin: 0;
   margin-bottom: 24px;
 }
+
+.subheading p {
+  font-weight: 300;
+  font-size: 14px;
+  color: gray;
+  font-style: italic;
+}

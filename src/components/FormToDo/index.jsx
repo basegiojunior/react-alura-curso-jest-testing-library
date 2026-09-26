@@ -1,14 +1,14 @@
 import { use } from "react";
 import Button from "../Button";
 import TextInput from "../TextInput";
-import "./form-todo.style.css";
 import { TodoContext } from "../TodoProvider/TodoContext";
+import "./form-todo.style.css";
 
 const FormToDo = ({ onSubmit }) => {
   const { selectedTodo } = use(TodoContext);
 
   return (
-    <form action={onSubmit} className="form">
+    <form role="form" action={onSubmit} className="form">
       <TextInput
         placeholder="Digite o item que deseja adicionar"
         name="description"
