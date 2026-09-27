@@ -1,15 +1,14 @@
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import FormToDo from ".";
+import customRender from "../../helpers/customRender";
 import { TodoContext } from "../TodoProvider/TodoContext";
 
 describe("FormToDo", () => {
   test("deveria renderizar o componente", () => {
-    const { getByRole } = render(
-      <TodoContext.Provider value={{ selectedTodo: { description: "Um exemplo qualquer" } }}>
-        <FormToDo onSubmit={() => {}} />
-      </TodoContext.Provider>,
-    );
+    const { getByRole } = customRender(<FormToDo onSubmit={() => {}} />, {
+      selectedTodo: { description: "Um exemplo qualquer" },
+    });
 
     expect(getByRole("form")).toBeInTheDocument();
   });
