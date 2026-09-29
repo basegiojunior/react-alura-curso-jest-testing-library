@@ -8,6 +8,7 @@ import FormToDo from "./components/FormToDo";
 import { Header } from "./components/Header";
 import { Heading } from "./components/Heading";
 import { IconPlus, IconSchool } from "./components/icons";
+import { ToDoCount } from "./components/ToDoCount";
 import ToDoGroup from "./components/ToDoGroup";
 import { TodoContext } from "./components/TodoProvider/TodoContext";
 
@@ -21,6 +22,7 @@ function App() {
         <Header>
           <Heading>
             <IconSchool /> Plano de estudos
+            <ToDoCount />
           </Heading>
         </Header>
 

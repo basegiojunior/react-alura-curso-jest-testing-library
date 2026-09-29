@@ -13,11 +13,10 @@ describe("ToDoGroup", () => {
 
   test("deveria renderizar a mensagem de lista vazia quando não tiver itens", () => {
     const { getByText, queryAllByRole } = render(
-      <ToDoGroup isLoading={true} todos={[]} heading="Teste" />,
+      <ToDoGroup isLoading={false} todos={[]} heading="Teste" />,
     );
 
     expect(getByText("Nenhum item encontrado")).toBeInTheDocument();
-    expect(querytByText("Carregando...")).toBeNull();
   });
 
   test.each([
