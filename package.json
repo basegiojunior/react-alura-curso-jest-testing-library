@@ -12,7 +12,9 @@
     "preview": "vite preview",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:low-cost": "jest --runInBand"
+    "test:low-cost": "jest --runInBand",
+    "test:coverage": "jest --coverage",
+    "test:coverage-all": "jest --coverage --collectCoverageFrom=\"src/**/*.{js,jsx}\""
   },
   "dependencies": {
     "react": "^19.0.0",
